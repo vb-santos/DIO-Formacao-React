@@ -46,18 +46,18 @@ const App = () => {
 
           {currentUser?.name ? ( <>
             <div className="perfil">
-            <img src={currentUser.avatar_url}
-            className="profile"
-            alt="Foto do usuário" />
+              <img src={currentUser.avatar_url}
+              className="profile"
+              alt="Foto do usuário" />
 
-            <div>
-              <h3>{currentUser.name}</h3>
-              <span>@{currentUser.login}</span>
-              <p>{currentUser.bio}</p>
+              <div className="perfil-dados">
+                <h3>{currentUser.name}</h3>
+                <span>@{currentUser.login}</span>
+                <p>{currentUser.bio}</p>
+              </div>
             </div>
-          </div>
           
-          <hr />
+            <hr />
           </> ) : null}
 
           {repos?.length ? ( <>
