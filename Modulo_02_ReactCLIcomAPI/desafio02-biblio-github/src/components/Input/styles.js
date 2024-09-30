@@ -7,6 +7,7 @@ export const InputContainer = styled.div`
     height: 62px;
     width: 80%;
 
+    display: flex;
     margin: 20px;
 
     input {
@@ -14,7 +15,7 @@ export const InputContainer = styled.div`
         border: 0;
         border-radius: 20px;
 
-        width: 96.8%;
+        width: 100%;
         height: 62px;
 
         padding: 0 20px;

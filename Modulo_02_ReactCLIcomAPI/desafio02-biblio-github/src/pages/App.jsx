@@ -40,6 +40,7 @@ const App = () => {
       <Button onClick={handleSearchRepo}/>
 
       {repos.map(repo => <ItemRepo
+        key={repo.id}
         repo={repo}
         handleRemoveRepo={handleRemoveRepo}
       />)}
