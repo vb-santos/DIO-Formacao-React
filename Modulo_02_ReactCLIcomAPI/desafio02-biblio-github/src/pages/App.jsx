@@ -6,6 +6,7 @@ import Input from '../components/Input'
 import ItemRepo from '../components/ItemRepo/';
 import Button from '../components/Button';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { api } from '../services/api';
 
 const App = () => {
