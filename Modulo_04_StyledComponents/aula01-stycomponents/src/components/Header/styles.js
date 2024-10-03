@@ -59,7 +59,7 @@ export const Menu = styled.a`
     margin-right: 12px;
 `
 
-export const MenuRight = styled.a`
+export const MenuRight = styled.div`
     font-family: 'Open Sans';
     font-style: normal;
     font-size: 12px;

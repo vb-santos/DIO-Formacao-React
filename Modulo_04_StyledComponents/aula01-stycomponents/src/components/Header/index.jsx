@@ -1,5 +1,6 @@
 import logoDio from '../../assets/logoDio.png';
 
+import { Link } from 'react-router-dom';
 import { Button } from '../Button';
 import {
     BuscarInputContainer,
@@ -30,7 +31,7 @@ const Header = ({autenticado}) => {
                 {autenticado ? (<>
                     <UserPicture src="https://avatars.githubusercontent.com/u/114593367?s=96&v=4"/>
                 </>) : (<>
-                    <MenuRight href='#'>Home</MenuRight>
+                    <Link to="/"><MenuRight>Home</MenuRight></Link>
                     <Button title="Entrar"/>
                     <Button title="Cadastrar"/>
                 </>)}
