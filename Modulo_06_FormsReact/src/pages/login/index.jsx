@@ -12,6 +12,8 @@ import { faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import { Column, Container, CriarText, EsquecerText, Row, SubtitleLogin, Title, TitleLogin, Wrapper } from './styles'
 
+import { api} from '../../services/api';
+
 import './style.css';
 
 const schema = yup.object({
@@ -22,18 +24,24 @@ const schema = yup.object({
 const Login = () => {
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         mode: 'onChange',
     });
 
-    console.log(isValid, errors)
+    const onSubmit = async formData => {
+        try{
+            const { data } = await api.get(`users?email=${formData.email}&senha=${formData.password}`);
 
-    const onSubmit = data => console.log(data);
-
-    const handleClickFeed = () => {
-        navigate('/feed');
-    }
+            if(data.length === 1){
+                navigate('/feed');
+            } else {
+                alert('Email ou senha inválido');
+            }
+        } catch{
+            alert("Houve um erro, tente novamente!");
+        }
+    }; 
 
     return (<>
         <Header/>
@@ -73,7 +81,7 @@ const Login = () => {
                             }
                         />
 
-                        <Button title="Entrar" variant="secondary" onClick={handleClickFeed} type="submit"/>
+                        <Button title="Entrar" variant="secondary" type="submit"/>
                     </form>
 
                     <Row>
