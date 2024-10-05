@@ -1,0 +1,16 @@
+.iconsFont{
+    color: #671178
+}
+
+.criarText{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+
+    line-height: 19px;
+    text-decoration: none;
+
+    color: #62CD32;
+    cursor: pointer;
+}
